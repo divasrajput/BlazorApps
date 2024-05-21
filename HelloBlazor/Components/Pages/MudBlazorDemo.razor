@@ -1,0 +1,51 @@
+﻿@page "/mudblazor"
+@rendermode InteractiveServer
+@using static MudBlazor.CategoryTypes
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+<h3>VITAS-Service Opportunity</h3>
+
+<MudAppBar Color="Color.Primary" Fixed="false">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+    <MudSpacer />
+
+    <MudButton Style="margin:10px" Variant="Variant.Outlined" Color="Color.Inherit"  >Home</MudButton>
+    <MudButton Style="margin:10px" Variant="Variant.Outlined" Color="Color.Inherit">New Case</MudButton>
+  
+    <MudIconButton Icon="@Icons.Custom.Brands.MicrosoftWindows" Color="Color.Inherit" />
+</MudAppBar>
+<br />
+
+<MudSelect Margin="Margin.Dense" T="string" Label="Filter" Variant="Variant.Outlined">
+    <MudSelectItem Value="@(option1)" />
+    <MudSelectItem Value="@(option2)" />
+    <MudSelectItem Value="@(option3)" />
+</MudSelect>
+
+<MudSelect Margin="Margin.Normal" T="string" Label="Coffee" Variant="Variant.Outlined">
+    <MudSelectItem Value="@(option1)" />
+    <MudSelectItem Value="@("Triceratops")" />
+    <MudSelectItem Value="@("Henon Rex")" />
+</MudSelect>
+
+<MudRadioGroup @bind-Value="Dense_Radio">
+    <MudRadio Value="true" Color="Color.Primary" Dense="true">Dense</MudRadio>
+    <MudRadio Value="false" Color="Color.Secondary" Dense="false">Normal</MudRadio>
+</MudRadioGroup>
+<br />
+
+
+
+
+@code {
+    string option1 = "My Queue";
+    string option2 = "Completed";
+    string option3 = "Pending";
+
+    public bool Dense_Radio { get; set; } = true;
+
+
+ 
+
+
+}
